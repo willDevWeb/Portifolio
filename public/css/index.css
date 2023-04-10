@@ -68,7 +68,6 @@ header{
 footer{
     background-color: var(--bg-dark);
     min-height: 150px;
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +85,6 @@ footer{
     display: inline-block;
     border-bottom: 1px solid #00000000;
     min-width: 100px;
-
 }
 .menu-footer ul li a{
     text-decoration: none;
