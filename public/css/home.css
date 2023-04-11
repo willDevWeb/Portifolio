@@ -5,11 +5,21 @@
     --secondary-color: rgb(230,230,230);
     --bt-description: rgb(0, 130, 130);
     --bt-description-hover: rgb(0, 160, 160);
+    --bg-user-skils: rgba(0, 0, 0,.5);
+    --border-off: rgba(0,0,0,0);
+    --border-on: rgba(230,230,230,1);
+
+}
+section{
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 /*primeira seção da home*/
 .section-description{
-    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,9 +63,6 @@
 }
 
 /*segunda sessão da home*/
-.section-gallery{
-    min-height: 350px;
-}
 .section-gallery > div{
     padding: 5px;
 }
@@ -80,4 +87,41 @@
 .gallery-item img {
     width: 100%;
     padding: 5px;
+}
+
+/*formatação do terceiro session referente ao resumo do usuario*/
+    .user-resume{
+    background-color: var(--bg-description);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.skils{
+    margin: 50px auto 50px auto;
+    border: 1px solid var(--primary-color);
+    background-color: var(--bg-user-skils);
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.skils span{
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: solid 1px var(--border-off);
+}
+.skils span:hover{
+    border-bottom: solid 1px var(--border-on);
+}
+.user-avatar img{
+    width: 150px;
+    border-radius: 100%;
+    border: solid 1px var(--primary-color);
+    margin: 5px;
 }
