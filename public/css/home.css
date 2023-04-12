@@ -1,127 +1,88 @@
 :root{
-    --bg-description: rgba(0,0,0,.5);
-    --shadow-color: rgba(0, 0, 0,.5);
-    --primary-color: rgb(250, 250, 250);
-    --secondary-color: rgb(230,230,230);
-    --bt-description: rgb(0, 130, 130);
-    --bt-description-hover: rgb(0, 160, 160);
-    --bg-user-skils: rgba(0, 0, 0,.5);
-    --border-off: rgba(0,0,0,0);
-    --border-on: rgba(230,230,230,1);
-
-}
-section{
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
+    --bg-main:#fff;
+    --bg-content: #ddd;
+    --color-h2: #fff;
 }
 
-/*primeira seção da home*/
-.section-description{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
 }
-.div-description{
-    background-color: var(--bg-description);
-    height: 350px;
+
+main{
+    display: block;
+    background-color: var(--bg-main);
+}
+
+section.module.parallax h1{
+    text-align: center;
+    color: var(--color-h2);
+    font-size: 80px;
+    text-transform: uppercase;
+}
+section.module.parallax-item{
+    height: 400px;
+    background-color: black;
+}
+
+section.module h2{
+    margin-bottom: 45px;
+    font-size: 32px;
+}
+
+section.module.content{
+    padding: 40px 0;
+    text-align: center;
+    background: var(--bg-content);
+}
+
+section.module.parallax{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px var(--shadow-color);
-}
-.div-description h4{
-    color: var(--secondary-color);
-    font-size: 48pt;
-    width: 450px;
-    text-align: center;
-}
-.bt-description-border{
-    padding: 2px;
-    border: solid 1px var(--secondary-color);
-    margin-top: 25px;
-}
-.div-description a{
-    text-decoration: none;
-    color: var(--secondary-color) ;
-    background-color: var(--bt-description);
-    width: 150px;
-    height: 35px;
-    font-size: 14pt;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 200ms ease-in-out;
-}
-.div-description a:hover{
-    background-color: var(--bt-description-hover);
-    color: var(--primary-color);
+    height: 100vh !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50%;
 }
 
-/*segunda sessão da home*/
-.section-gallery > div{
-    padding: 5px;
+section.module.parallax-1{
+    background-image: url('https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
+section.module.parallax::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    background:  linear-gradient( to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+}
+
+/*section content config*/
+section.module h2{
+}
+
+/*gallery items config*/
+
 .gallery{
     display: flex;
-    box-shadow: 0 0 15px var(--shadow-color);
-    background-color: var(--bg-description);
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
 }
 .gallery-item{
-    width: 350px;
-    margin-top: 5px;
-    border: solid 1px var(--secondary-color);
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-}
-.gallery-item:hover img{
-    -webkit-transform: scale(1.04);
+    margin: 5px 0;
+    max-width: 400px;
+    max-height: 200px;
+    border: #000 solid 1px;
 }
 .gallery-item img {
     width: 100%;
     padding: 5px;
-}
 
-/*formatação do terceiro session referente ao resumo do usuario*/
-    .user-resume{
-    background-color: var(--bg-description);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-}
-.skils{
-    margin: 50px auto 50px auto;
-    border: 1px solid var(--primary-color);
-    background-color: var(--bg-user-skils);
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.skils span{
-    font-size: 14pt;
-    font-weight: bold;
-    color: var(--secondary-color);
-    margin: 5px;
-    padding: 5px;
-    cursor: pointer;
-    border-bottom: solid 1px var(--border-off);
-}
-.skils span:hover{
-    border-bottom: solid 1px var(--border-on);
-}
-.user-avatar img{
-    width: 150px;
-    border-radius: 100%;
-    border: solid 1px var(--primary-color);
-    margin: 5px;
 }
