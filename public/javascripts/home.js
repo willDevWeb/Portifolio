@@ -8,9 +8,9 @@ async function getDataSkill (){
     }
 
     const promisse = await fetch(url, option);
-    const response = await promisse.json();
+    const response  = await promisse.json()
 
-    handdlerPromisse(promisse, response);
+    handdlerPromisse(promisse,response)
 
 };getDataSkill();
 
@@ -26,5 +26,19 @@ const handdlerPromisse = (promisse, response) => {
 };
 
 function insertDataReturned (response){
+    let arrayCreate = JSON.parse(response, null, 4);
 
+    arrayCreate.forEach( element => {
+        let span = document.createElement('span');
+        span.innerText = element.name;
+
+        span.addEventListener('mouseover', e => {
+            let paragraph = document.createElement('p');
+            paragraph.innerText = element.description;
+
+            document.querySelector('.skills-desc').innerHTML = '';
+            document.querySelector('.skills-desc').appendChild(paragraph);
+        })
+        document.querySelector('.skills').appendChild(span);
+    })
 }
